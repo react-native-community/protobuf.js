@@ -1,5 +1,5 @@
 {
-  "name": "protobufjs",
+  "name": "@react-native-community/protobufjs",
   "version": "6.8.9",
   "versionScheme": "~",
   "description": "Protocol Buffers for JavaScript (& TypeScript).",
@@ -15,11 +15,6 @@
     "typescript"
   ],
   "main": "index.js",
-  "types": "index.d.ts",
-  "bin": {
-    "pbjs": "bin/pbjs",
-    "pbts": "bin/pbts"
-  },
   "scripts": {
     "bench": "node bench",
     "build": "gulp --gulpfile scripts/gulpfile.js",
@@ -29,7 +24,6 @@
     "lint": "eslint **/*.js -c config/eslint.json && tslint **/*.d.ts -e **/node_modules/** -t stylish -c config/tslint.json",
     "pages": "node scripts/pages",
     "prepublish": "node scripts/prepublish",
-    "postinstall": "node scripts/postinstall",
     "prof": "node bench/prof",
     "test": "tape -r ./lib/tape-adapter tests/*.js tests/node/*.js",
     "test-types": "tsc tests/comp_typescript.ts --lib es2015 --strictNullChecks --experimentalDecorators --emitDecoratorMetadata && tsc tests/data/test.js.ts --lib es2015 --noEmit --strictNullChecks && tsc tests/data/rpc.ts --lib es2015 --noEmit --strictNullChecks",
@@ -87,33 +81,8 @@
     "vinyl-fs": "^3.0.3",
     "vinyl-source-stream": "^2.0.0"
   },
-  "cliDependencies": [
-    "semver",
-    "chalk",
-    "glob",
-    "jsdoc",
-    "minimist",
-    "tmp",
-    "uglify-js",
-    "espree",
-    "escodegen",
-    "estraverse"
-  ],
   "files": [
     "index.js",
-    "index.d.ts",
-    "light.d.ts",
-    "light.js",
-    "minimal.d.ts",
-    "minimal.js",
-    "package-lock.json",
-    "tsconfig.json",
-    "scripts/postinstall.js",
-    "bin/**",
-    "cli/**",
-    "dist/**",
-    "ext/**",
-    "google/**",
-    "src/**"
+    "src/**/!(*.d.ts)"
   ]
 }
